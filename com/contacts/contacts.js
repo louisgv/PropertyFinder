@@ -1,15 +1,3 @@
-// var ContactView = React.createClass({
-//   propsTypes: {
-//     contacts: React.propsTypes.array.isRequired,
-//     newContact: React.propsTypes.object.isRequired,
-//   },
-//   render: function() {
-//     return (
-//       React.createElement
-//     );
-//   }
-// })
-
 var ContactForm = React.createClass({
   propTypes: {
     contact: React.PropTypes.object.isRequired
@@ -49,17 +37,17 @@ var ContactItem = React.createClass({
   render: function () {
     return(
       React.createElement('li', {
-          className: 'contact-item'
+          className: 'ci'
         },
         React.createElement('h2', {
-          className: 'contact-item-name'
+          className: 'ci-name'
         }, this.props.name),
         React.createElement('a', {
-          className: 'contact-item-email',
+          className: 'ci-email',
           href: 'mailto:' + this.props.email
         }, this.props.email),
         React.createElement('div', {
-          className: 'contact-item-desc'
+          className: 'ci-desc'
         }, this.props.description)
       )
     )
@@ -95,6 +83,18 @@ var listElements = contacts.filter((contact) => {
       description: contact.description
     })
   })
+
+// var ContactView = React.createClass({
+//   propsTypes: {
+//     contacts: React.propsTypes.array.isRequired,
+//     newContact: React.propsTypes.object.isRequired,
+//   },
+//   render: function () {
+//     return(
+//       React.createElement(ContactForm, {})
+//     );
+//   }
+// })
 
 var rootElement =
   React.createElement('div', {},
